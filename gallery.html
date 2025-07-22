@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Kayhan Studio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Dari Font Support -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/font-face.css" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+               <a href="index.html"><img src="images/logo.png" alt="Kayhan Studio Logo" class="logo-image"></a>
+            </div>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-right" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-en="Home" data-dari="خانه">Home</a></li>
+                    <li><a href="about.html" data-en="About" data-dari="درباره ما">About</a></li>
+                    <li><a href="services.html" data-en="Services" data-dari="خدمات">Services</a></li>
+                    <li><a href="gallery.html" class="active" data-en="Gallery" data-dari="گالری">Gallery</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-dari="تماس">Contact</a></li>
+                </ul>
+                <button class="language-toggle" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-text">دری</span>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="Our Photography Gallery" data-dari="گالری عکاسی ما">Our Photography Gallery</h1>
+            <p data-en="Explore our portfolio of beautiful moments captured through our lens" data-dari="مجموعه لحظات زیبایی که از دریچه دوربین ما ثبت شده‌اند را کاوش کنید">Explore our portfolio of beautiful moments captured through our lens</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="gallery-filter fade-in">
+                <button class="filter-btn active" data-filter="all" data-en="All" data-dari="همه">All</button>
+                <button class="filter-btn" data-filter="wedding" data-en="Weddings" data-dari="عروسی‌ها">Weddings</button>
+                <button class="filter-btn" data-filter="birthday" data-en="Birthdays" data-dari="تولدها">Birthdays</button>
+                <button class="filter-btn" data-filter="portrait" data-en="Portraits" data-dari="پرتره‌ها">Portraits</button>
+                <button class="filter-btn" data-filter="family" data-en="Family" data-dari="خانواده">Family</button>
+                <button class="filter-btn" data-filter="event" data-en="Events" data-dari="رویدادها">Events</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Wedding Photos -->
+                <div class="gallery-item fade-in" data-category="wedding">
+                    <img src="images/wedding-01.jpg" alt="Wedding Photography">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Elegant Wedding" data-dari="عروسی زیبا">Elegant Wedding</h3>
+                        <p data-en="Captured at Grand Hall" data-dari="ثبت شده در تالار بزرگ">Captured at Grand Hall</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding Ceremony">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Traditional Ceremony" data-dari="مراسم سنتی">Traditional Ceremony</h3>
+                        <p data-en="Beautiful moments" data-dari="لحظات زیبا">Beautiful moments</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding Couple">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Love Story" data-dari="داستان عشق">Love Story</h3>
+                        <p data-en="Romantic photoshoot" data-dari="عکاسی رمانتیک">Romantic photoshoot</p>
+                    </div>
+                </div>
+
+                <!-- Birthday Photos -->
+                <div class="gallery-item fade-in" data-category="birthday">
+                    <img src="images/IMG_5785[1].JPG" alt="Birthday Celebration">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Sweet 16 Party" data-dari="جشن شیرین ۱۶">Sweet 16 Party</h3>
+                        <p data-en="Joyful celebration" data-dari="جشن شادی‌بخش">Joyful celebration</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="birthday">
+                    <img src="images/IMG_7474.jpg" alt="Kids Birthday">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Kids Birthday Fun" data-dari="تولد شاد کودکان">Kids Birthday Fun</h3>
+                        <p data-en="Colorful moments" data-dari="لحظات رنگارنگ">Colorful moments</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="birthday">
+                    <img src="images/IMG_8741.JPG" alt="Birthday Cake">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Cake Smash Session" data-dari="جلسه کیک خوری">Cake Smash Session</h3>
+                        <p data-en="First birthday joy" data-dari="شادی اولین تولد">First birthday joy</p>
+                    </div>
+                </div>
+
+                <!-- Portrait Photos -->
+                <div class="gallery-item fade-in" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Portrait">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Business Portrait" data-dari="پرتره تجاری">Business Portrait</h3>
+                        <p data-en="Professional headshot" data-dari="عکس حرفه‌ای">Professional headshot</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Creative Portrait">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Artistic Portrait" data-dari="پرتره هنری">Artistic Portrait</h3>
+                        <p data-en="Creative expression" data-dari="بیان خلاقانه">Creative expression</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fashion Portrait">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Fashion Portrait" data-dari="پرتره مد">Fashion Portrait</h3>
+                        <p data-en="Style photography" data-dari="عکاسی سبک">Style photography</p>
+                    </div>
+                </div>
+
+                <!-- Family Photos -->
+                <div class="gallery-item fade-in" data-category="family">
+                    <img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family Portrait">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Family Together" data-dari="خانواده در کنار هم">Family Together</h3>
+                        <p data-en="Precious moments" data-dari="لحظات گرانبها">Precious moments</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="family">
+                    <img src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family Fun">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Outdoor Family" data-dari="خانواده در طبیعت">Outdoor Family</h3>
+                        <p data-en="Natural setting" data-dari="محیط طبیعی">Natural setting</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="family">
+                    <img src="https://images.unsplash.com/photo-1606788075819-9574a6edfab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Newborn Photography">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Newborn Session" data-dari="جلسه نوزاد">Newborn Session</h3>
+                        <p data-en="First days" data-dari="روزهای اول">First days</p>
+                    </div>
+                </div>
+
+                <!-- Event Photos -->
+                <div class="gallery-item fade-in" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Corporate Event">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Corporate Event" data-dari="رویداد شرکتی">Corporate Event</h3>
+                        <p data-en="Professional coverage" data-dari="پوشش حرفه‌ای">Professional coverage</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Conference Photography">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Conference" data-dari="کنفرانس">Conference</h3>
+                        <p data-en="Business gathering" data-dari="گردهمایی تجاری">Business gathering</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Graduation Ceremony">
+                    <div class="gallery-overlay">
+                        <h3 data-en="Graduation Day" data-dari="روز فارغ‌التحصیلی">Graduation Day</h3>
+                        <p data-en="Achievement captured" data-dari="ثبت دستاورد">Achievement captured</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn" data-en="Load More Photos" data-dari="عکس‌های بیشتر">Load More Photos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery CTA -->
+    <section class="section gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Want to See Your Special Moments Here?" data-dari="می‌خواهید لحظات خاص خود را اینجا ببینید؟">Want to See Your Special Moments Here?</h2>
+                <p data-en="Book a photography session with us and let us capture your precious memories" data-dari="یک جلسه عکاسی با ما رزرو کنید و اجازه دهید خاطرات گرانبهای شما را ثبت کنیم">Book a photography session with us and let us capture your precious memories</p>
+                <a href="contact.html" class="cta-button" data-en="Book Your Session" data-dari="جلسه خود را رزرو کنید">Book Your Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/93748030403" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-en="Quick Links" data-dari="لینک‌های سریع">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-dari="خانه">Home</a></li>
+                        <li><a href="about.html" data-en="About" data-dari="درباره ما">About</a></li>
+                        <li><a href="services.html" data-en="Services" data-dari="خدمات">Services</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-dari="گالری">Gallery</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-dari="تماس">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Services" data-dari="خدمات">Services</h3>
+                    <ul>
+                        <li><a href="services.html" data-en="Wedding Photography" data-dari="عکاسی عروسی">Wedding Photography</a></li>
+                        <li><a href="services.html" data-en="Portrait Photography" data-dari="عکاسی پرتره">Portrait Photography</a></li>
+                        <li><a href="services.html" data-en="Family Photography" data-dari="عکاسی خانوادگی">Family Photography</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Contact Info" data-dari="معلومات تماس">Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> <span data-en="+93748030403" data-dari="+۹۳۷۴۸۰۳۰۴۰۳">+93748030403</span></p>
+                    <p><i class="fas fa-envelope"></i> info@kayhanstudio.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Kabul, Afghanistan" data-dari="کابل، افغانستان">Kabul, Afghanistan</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="&copy; 2025 Kayhan Studio. All rights reserved." data-dari="&copy; ۲۰۲۵ استدیو کیهان. تمام حقوق محفوظ است.">&copy; 2025 Kayhan Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

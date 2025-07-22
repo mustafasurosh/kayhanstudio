@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Kayhan Studio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Dari Font Support -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/font-face.css" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+               <a href="index.html"><img src="images/logo.png" alt="Kayhan Studio Logo" class="logo-image"></a>
+            </div>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-right" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-en="Home" data-dari="خانه">Home</a></li>
+                    <li><a href="about.html" class="active" data-en="About" data-dari="درباره ما">About</a></li>
+                    <li><a href="services.html" data-en="Services" data-dari="خدمات">Services</a></li>
+                    <li><a href="gallery.html" data-en="Gallery" data-dari="گالری">Gallery</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-dari="تماس">Contact</a></li>
+                </ul>
+                <button class="language-toggle" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-text">دری</span>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="About Kayhan Studio" data-dari="درباره استدیو کیهان">About Kayhan Studio</h1>
+            <p data-en="Learn more about our photography studio and our passion for capturing moments" data-dari="بیشتر در مورد استدیو عکاسی ما و علاقه ما به ثبت لحظات بدانید">Learn more about our photography studio and our passion for capturing moments</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="section about-main">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2 data-en="Our Story" data-dari="داستان ما">Our Story</h2>
+                    <p data-en="Kayhan Studio is a passionate photography team dedicated to capturing life's most precious moments. With years of experience in professional photography, we understand the art of storytelling through images." data-dari="استدیو کیهان یک تیم عکاسی پرشور است که به ثبت گرانبهاترین لحظات زندگی اختصاص دارد. با سال‌ها تجربه در عکاسی حرفه‌ای، ما هنر قصه‌گویی از طریق تصاویر را درک می‌کنیم.">Kayhan Studio is a passionate photography team dedicated to capturing life's most precious moments. With years of experience in professional photography, we understand the art of storytelling through images.</p>
+                    <p data-en="Our commitment to quality and artistic excellence has made us a trusted choice for weddings, portraits, and special events. We believe in creating timeless photographs that preserve your cherished memories forever." data-dari="تعهد ما به کیفیت و تعالی هنری، ما را به انتخابی قابل اعتماد برای عروسی‌ها، پرتره‌ها و مراسم خاص تبدیل کرده است. ما به خلق عکس‌های جاودانه‌ای اعتقاد داریم که خاطرات عزیز شما را تا ابد حفظ کنند.">Our commitment to quality and artistic excellence has made us a trusted choice for weddings, portraits, and special events. We believe in creating timeless photographs that preserve your cherished memories forever.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <div class="placeholder-image" data-en="Kayhan Studio Team Photo" data-dari="عکس تیم استدیو کیهان">
+                        Kayhan Studio Team Photo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 data-en="Our Mission" data-dari="ماموریت ما">Our Mission</h3>
+                    <p data-en="To capture the beauty and emotion of life's most important moments through artistic and professional photography that tells your unique story." data-dari="ثبت زیبایی و احساس مهم‌ترین لحظات زندگی از طریق عکاسی هنری و حرفه‌ای که داستان منحصر به فرد شما را بیان می‌کند.">To capture the beauty and emotion of life's most important moments through artistic and professional photography that tells your unique story.</p>
+                </div>
+                <div class="vision-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 data-en="Our Vision" data-dari="چشم‌انداز ما">Our Vision</h3>
+                    <p data-en="To be Afghanistan's premier photography studio, recognized for excellence in capturing precious memories and creating timeless art that families treasure forever." data-dari="پیشرو در استدیوهای عکاسی افغانستان باشیم و به دلیل تعالی در ثبت خاطرات گرانبها و خلق هنر جاودانه‌ای که خانواده‌ها تا ابد گنجینه می‌کنند، شناخته شویم.">To be Afghanistan's premier photography studio, recognized for excellence in capturing precious memories and creating timeless art that families treasure forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team">
+        <div class="container">
+            <h2 class="section-title" data-en="Our Team" data-dari="تیم ما">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <div class="placeholder-image" data-en="Team Member" data-dari="عضو تیم">
+                            Team Member
+                        </div>
+                    </div>
+                    <h3 data-en="Kayhan Ahmadi" data-dari="کیهان احمدی">Mujtaba Kayhan</h3>
+                    <p class="member-role" data-en="Founder & Lead Photographer" data-dari="بنیانگذار و عکاس ارشد">Founder & Lead Photographer</p>
+                    <p data-en="With over 10 years of experience in professional photography, Kayhan brings artistic vision and technical expertise to every shoot." data-dari="با بیش از ۱۰ سال تجربه در عکاسی حرفه‌ای، کیهان چشم‌انداز هنری و تخصص فنی را به هر جلسه عکاسی می‌آورد.">With over 10 years of experience in professional photography, Kayhan brings artistic vision and technical expertise to every shoot.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <div class="placeholder-image" data-en="Team Member" data-dari="عضو تیم">
+                            Team Member
+                        </div>
+                    </div>
+                    <h3 data-en="Sara Karimi" data-dari="سارا کریمی">Ferdaws Sadat</h3>
+                    <p class="member-role" data-en="Portrait Specialist" data-dari="متخصص پرتره">Portrait Specialist</p>
+                    <p data-en="Specializing in capturing the essence and personality of our clients through beautiful portrait photography." data-dari="متخصص در ثبت ذات و شخصیت مشتریان ما از طریق عکاسی پرتره زیبا.">Specializing in capturing the essence and personality of our clients through beautiful portrait photography.</p>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <div class="placeholder-image" data-en="Team Member" data-dari="عضو تیم">
+                            Team Member
+                        </div>
+                    </div>
+                    <h3 data-en="Ahmad Nazari" data-dari="احمد نظری">Elyas Sadat</h3>
+                    <p class="member-role" data-en="Wedding Photography Expert" data-dari="متخصص عکاسی عروسی">Wedding Photography Expert</p>
+                    <p data-en="Ensuring every wedding moment is captured perfectly, creating memories that couples will cherish forever." data-dari="اطمینان از ثبت کامل هر لحظه عروسی و خلق خاطراتی که زوج‌ها تا ابد گرامی خواهند داشت.">Ensuring every wedding moment is captured perfectly, creating memories that couples will cherish forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section values">
+        <div class="container">
+            <h2 class="section-title" data-en="Our Values" data-dari="ارزش‌های ما">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item fade-in">
+                    <i class="fas fa-camera"></i>
+                    <h3 data-en="Artistic Excellence" data-dari="تعالی هنری">Artistic Excellence</h3>
+                    <p data-en="We strive for artistic perfection in every photograph we create" data-dari="ما در هر عکسی که می‌گیریم برای کمال هنری تلاش می‌کنیم">We strive for artistic perfection in every photograph we create</p>
+                </div>
+                <div class="value-item fade-in">
+                    <i class="fas fa-heart"></i>
+                    <h3 data-en="Passion" data-dari="علاقه">Passion</h3>
+                    <p data-en="Photography is our passion and it shows in every image" data-dari="عکاسی علاقه ماست و این در هر تصویر نمایان است">Photography is our passion and it shows in every image</p>
+                </div>
+                <div class="value-item fade-in">
+                    <i class="fas fa-users"></i>
+                    <h3 data-en="Client Focus" data-dari="تمرکز بر مشتری">Client Focus</h3>
+                    <p data-en="Your satisfaction and happiness are our top priorities" data-dari="رضایت و خوشحالی شما اولویت اصلی ماست">Your satisfaction and happiness are our top priorities</p>
+                </div>
+                <div class="value-item fade-in">
+                    <i class="fas fa-clock"></i>
+                    <h3 data-en="Timeless Quality" data-dari="کیفیت جاودانه">Timeless Quality</h3>
+                    <p data-en="We create photographs that will be treasured for generations" data-dari="ما عکس‌هایی می‌گیریم که برای نسل‌ها گنجینه خواهند بود">We create photographs that will be treasured for generations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-en="Quick Links" data-dari="لینک‌های سریع">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-dari="خانه">Home</a></li>
+                        <li><a href="about.html" data-en="About" data-dari="درباره ما">About</a></li>
+                        <li><a href="services.html" data-en="Services" data-dari="خدمات">Services</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-dari="تماس">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Services" data-dari="خدمات">Services</h3>
+                    <ul>
+                        <li><a href="services.html" data-en="Wedding Photography" data-dari="عکاسی عروسی">Wedding Photography</a></li>
+                        <li><a href="services.html" data-en="Portrait Photography" data-dari="عکاسی پرتره">Portrait Photography</a></li>
+                        <li><a href="services.html" data-en="Family Photography" data-dari="عکاسی خانوادگی">Family Photography</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Contact Info" data-dari="معلومات تماس">Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> <span data-en="+93748030403" data-dari="+۹۳۷۴۸۰۳۰۴۰۳">+93748030403</span></p>
+                    <p><i class="fas fa-envelope"></i> info@kayhanstudio.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Kabul, Afghanistan" data-dari="کابل، افغانستان">Kabul, Afghanistan</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="&copy; 2025 Kayhan Studio. All rights reserved." data-dari="&copy; ۲۰۲۵ استدیو کیهان. تمام حقوق محفوظ است.">&copy; 2025 Kayhan Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

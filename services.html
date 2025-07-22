@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Services - Kayhan Studio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Dari Font Support -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/font-face.css" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+              <a href="index.html"><img src="images/logo.png" alt="Kayhan Studio Logo" class="logo-image"></a>
+            </div>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-right" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-en="Home" data-dari="خانه">Home</a></li>
+                    <li><a href="about.html" data-en="About" data-dari="درباره ما">About</a></li>
+                    <li><a href="services.html" class="active" data-en="Services" data-dari="خدمات">Services</a></li>
+                    <li><a href="gallery.html" data-en="Gallery" data-dari="گالری">Gallery</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-dari="تماس">Contact</a></li>
+                </ul>
+                <button class="language-toggle" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-text">دری</span>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">Dark</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="Our Photography Services" data-dari="خدمات عکاسی ما">Our Photography Services</h1>
+            <p data-en="Professional photography services to capture your special moments" data-dari="خدمات عکاسی حرفه‌ای برای ثبت لحظات خاص شما">Professional photography services to capture your special moments</p>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="section services-main">
+        <div class="container">
+            <div class="packages-grid">
+                <!-- Birthday Photography -->
+                <div class="package-card diamond fade-in">
+                    <div class="package-emoji" aria-label="Birthday">🎂</div>
+                    <div class="package-icon"><i class="fas fa-birthday-cake"></i></div>
+                    <h3 class="package-title" data-en="Birthday Photography" data-dari="عکاسی تولد">Birthday Photography</h3>
+                    <div class="package-price" data-en="Contact for Price" data-dari="برای قیمت تماس بگیرید">Contact for Price</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Professional birthday session" data-dari="جلسه عکاسی تولد حرفه‌ای">Professional birthday session</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Decorations and props" data-dari="دکور و وسایل تولد">Decorations and props</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Family and group shots" data-dari="عکس‌های خانوادگی و گروهی">Family and group shots</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Edited digital photos" data-dari="عکس‌های دیجیتال ادیت شده">Edited digital photos</span></li>
+                    </ul>
+                    <div class="package-note"><i class="fas fa-info-circle"></i> <span data-en="Note: Custom packages available for all ages." data-dari="نوت: بسته‌های سفارشی برای همه سنین موجود است.">Note: Custom packages available for all ages.</span></div>
+                    <a href="contact.html" class="package-btn" data-en="Book Birthday Session" data-dari="رزرو جلسه تولد">Book Birthday Session</a>
+                </div>
+
+                <!-- Wedding Photography -->
+                <div class="package-card gold fade-in">
+                    <div class="package-emoji" aria-label="Wedding">💍</div>
+                    <div class="package-icon"><i class="fas fa-heart"></i></div>
+                    <h3 class="package-title" data-en="Wedding Photography" data-dari="عکاسی عروسی">Wedding Photography</h3>
+                    <div class="package-price" data-en="Contact for Price" data-dari="برای قیمت تماس بگیرید">Contact for Price</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Pre-wedding photoshoot" data-dari="عکاسی پیش از عروسی">Pre-wedding photoshoot</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Ceremony coverage" data-dari="پوشش مراسم">Ceremony coverage</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Reception photography" data-dari="عکاسی پذیرایی">Reception photography</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Edited digital photos" data-dari="عکس‌های دیجیتال ادیت شده">Edited digital photos</span></li>
+                    </ul>
+                    <div class="package-note"><i class="fas fa-info-circle"></i> <span data-en="Note: Packages for all wedding sizes." data-dari="نوت: بسته‌ها برای همه نوع مراسم عروسی.">Note: Packages for all wedding sizes.</span></div>
+                    <a href="contact.html" class="package-btn featured-btn" data-en="Book Wedding Package" data-dari="رزرو بسته عروسی">Book Wedding Package</a>
+                </div>
+
+                <!-- Portrait Photography -->
+                <div class="package-card silver fade-in">
+                    <div class="package-emoji" aria-label="Portrait">📸</div>
+                    <div class="package-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="package-title" data-en="Portrait Photography" data-dari="عکاسی پرتره">Portrait Photography</h3>
+                    <div class="package-price" data-en="Contact for Price" data-dari="برای قیمت تماس بگیرید">Contact for Price</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Individual portraits" data-dari="پرتره فردی">Individual portraits</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Business headshots" data-dari="عکس‌های تجاری">Business headshots</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Creative portraits" data-dari="پرتره‌های خلاقانه">Creative portraits</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Edited digital photos" data-dari="عکس‌های دیجیتال ادیت شده">Edited digital photos</span></li>
+                    </ul>
+                    <div class="package-note"><i class="fas fa-info-circle"></i> <span data-en="Note: Studio and outdoor options available." data-dari="نوت: گزینه‌های استودیو و فضای باز موجود است.">Note: Studio and outdoor options available.</span></div>
+                    <a href="contact.html" class="package-btn" data-en="Schedule Portrait Session" data-dari="زمان‌بندی جلسه پرتره">Schedule Portrait Session</a>
+                </div>
+
+                <!-- Family Photography -->
+                <div class="package-card fade-in">
+                    <div class="package-emoji" aria-label="Family">👨‍👩‍👧‍👦</div>
+                    <div class="package-icon"><i class="fas fa-baby"></i></div>
+                    <h3 class="package-title" data-en="Family Photography" data-dari="عکاسی خانوادگی">Family Photography</h3>
+                    <div class="package-price" data-en="Contact for Price" data-dari="برای قیمت تماس بگیرید">Contact for Price</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Newborn photography" data-dari="عکاسی نوزاد">Newborn photography</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Children portraits" data-dari="پرتره کودکان">Children portraits</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Family gatherings" data-dari="گردهمایی خانوادگی">Family gatherings</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Edited digital photos" data-dari="عکس‌های دیجیتال ادیت شده">Edited digital photos</span></li>
+                    </ul>
+                    <div class="package-note"><i class="fas fa-info-circle"></i> <span data-en="Note: Multi-generational sessions available." data-dari="نوت: جلسات چند نسلی موجود است.">Note: Multi-generational sessions available.</span></div>
+                    <a href="contact.html" class="package-btn" data-en="Book Family Session" data-dari="رزرو جلسه خانوادگی">Book Family Session</a>
+                </div>
+
+                <!-- Event Photography -->
+                <div class="package-card fade-in">
+                    <div class="package-emoji" aria-label="Event">🎉</div>
+                    <div class="package-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3 class="package-title" data-en="Event Photography" data-dari="عکاسی رویداد">Event Photography</h3>
+                    <div class="package-price" data-en="Contact for Price" data-dari="برای قیمت تماس بگیرید">Contact for Price</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Birthday parties" data-dari="جشن تولد">Birthday parties</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Corporate events" data-dari="رویدادهای شرکتی">Corporate events</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Cultural celebrations" data-dari="جشن‌های فرهنگی">Cultural celebrations</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Edited digital photos" data-dari="عکس‌های دیجیتال ادیت شده">Edited digital photos</span></li>
+                    </ul>
+                    <div class="package-note"><i class="fas fa-info-circle"></i> <span data-en="Note: All event types covered." data-dari="نوت: همه نوع رویداد پوشش داده می‌شود.">Note: All event types covered.</span></div>
+                    <a href="contact.html" class="package-btn" data-en="Plan Event Coverage" data-dari="برنامه‌ریزی پوشش رویداد">Plan Event Coverage</a>
+                </div>
+
+                <!-- Graduation Photography -->
+                <div class="package-card fade-in">
+                    <div class="package-emoji" aria-label="Graduation">🎓</div>
+                    <div class="package-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="package-title" data-en="Graduation Photography" data-dari="عکاسی فارغ‌التحصیلی">Graduation Photography</h3>
+                    <div class="package-price" data-en="Contact for Price" data-dari="برای قیمت تماس بگیرید">Contact for Price</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Individual graduation photos" data-dari="عکس‌های فردی فارغ‌التحصیلی">Individual graduation photos</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Family celebration shots" data-dari="عکس‌های جشن خانوادگی">Family celebration shots</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Campus photography" data-dari="عکاسی محوطه دانشگاه">Campus photography</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Edited digital photos" data-dari="عکس‌های دیجیتال ادیت شده">Edited digital photos</span></li>
+                    </ul>
+                    <div class="package-note"><i class="fas fa-info-circle"></i> <span data-en="Note: Group and solo sessions available." data-dari="نوت: جلسات گروهی و انفرادی موجود است.">Note: Group and solo sessions available.</span></div>
+                    <a href="contact.html" class="package-btn" data-en="Book Graduation Session" data-dari="رزرو جلسه فارغ‌التحصیلی">Book Graduation Session</a>
+                </div>
+
+                <!-- Photo Editing Services -->
+                <div class="package-card fade-in">
+                    <div class="package-emoji" aria-label="Editing">🖼️</div>
+                    <div class="package-icon"><i class="fas fa-edit"></i></div>
+                    <h3 class="package-title" data-en="Photo Editing Services" data-dari="خدمات ویرایش عکس">Photo Editing Services</h3>
+                    <div class="package-price" data-en="Contact for Price" data-dari="برای قیمت تماس بگیرید">Contact for Price</div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Color correction" data-dari="تصحیح رنگ">Color correction</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Skin retouching" data-dari="روتوش پوست">Skin retouching</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Background removal" data-dari="حذف پس‌زمینه">Background removal</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Advanced editing" data-dari="ویرایش پیشرفته">Advanced editing</span></li>
+                    </ul>
+                    <div class="package-note"><i class="fas fa-info-circle"></i> <span data-en="Note: Professional editing for all sessions." data-dari="نوت: ویرایش حرفه‌ای برای همه جلسات.">Note: Professional editing for all sessions.</span></div>
+                    <a href="contact.html" class="package-btn" data-en="Request Editing Quote" data-dari="درخواست قیمت ویرایش">Request Editing Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/93748030403" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Call to Action -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Ready to Book Your Photography Session?" data-dari="آماده رزرو جلسه عکاسی خود هستید؟">Ready to Book Your Photography Session?</h2>
+                <p data-en="Contact us today to discuss your photography needs and create beautiful memories" data-dari="همین امروز با ما تماس بگیرید تا در مورد نیازهای عکاسی خود صحبت کنیم و خاطرات زیبایی بسازیم">Contact us today to discuss your photography needs and create beautiful memories</p>
+                <a href="contact.html" class="cta-button" data-en="Get Started Today" data-dari="همین امروز شروع کنید">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-en="Quick Links" data-dari="لینک‌های سریع">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-dari="خانه">Home</a></li>
+                        <li><a href="about.html" data-en="About" data-dari="درباره ما">About</a></li>
+                        <li><a href="services.html" data-en="Services" data-dari="خدمات">Services</a></li>
+                        <li><a href="gallery.html" data-en="Gallery" data-dari="گالری">Gallery</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-dari="تماس">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Services" data-dari="خدمات">Services</h3>
+                    <ul>
+                        <li><a href="services.html" data-en="Wedding Photography" data-dari="عکاسی عروسی">Wedding Photography</a></li>
+                        <li><a href="services.html" data-en="Portrait Photography" data-dari="عکاسی پرتره">Portrait Photography</a></li>
+                        <li><a href="services.html" data-en="Family Photography" data-dari="عکاسی خانوادگی">Family Photography</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Contact Info" data-dari="معلومات تماس">Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> <span data-en="+93748030403" data-dari="+۹۳۷۴۸۰۳۰۴۰۳">+93748030403</span></p>
+                    <p><i class="fas fa-envelope"></i> info@kayhanstudio.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Kabul, Afghanistan" data-dari="کابل، افغانستان">Kabul, Afghanistan</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="&copy; 2025 Kayhan Studio. All rights reserved." data-dari="&copy; ۲۰۲۵ استدیو کیهان. تمام حقوق محفوظ است.">&copy; 2025 Kayhan Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

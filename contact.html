@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="dari" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما - استدیو کیهان</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Dari Font Support -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/font-face.css" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="rtl">
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Kayhan Studio Logo" class="logo-image"></a>
+            </div>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-right" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-en="Home" data-dari="خانه">خانه</a></li>
+                    <li><a href="about.html" data-en="About" data-dari="درباره ما">درباره ما</a></li>
+                    <li><a href="services.html" data-en="Services" data-dari="خدمات">خدمات</a></li>
+                    <li><a href="gallery.html" data-en="Gallery" data-dari="گالری">گالری</a></li>
+                    <li><a href="contact.html" class="active" data-en="Contact" data-dari="تماس">تماس</a></li>
+                </ul>
+                <button class="language-toggle" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-text">English</span>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span id="theme-text">تاریک</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-en="Contact Kayhan Studio" data-dari="تماس با استدیو کیهان">تماس با استدیو کیهان</h1>
+            <p data-en="Get in touch with us to book your photography session or ask any questions" data-dari="برای رزرو جلسه عکاسی یا پرسیدن هر سوالی با ما در تماس باشید">برای رزرو جلسه عکاسی یا پرسیدن هر سوالی با ما در تماس باشید</p>
+        </div>
+    </section>
+
+    <!-- Contact Main -->
+    <section class="section contact-main">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form fade-in">
+                    <h2 data-en="Book your photography session" data-dari="جلسه عکاسی خود را رزرو کنید">جلسه عکاسی خود را رزرو کنید</h2>
+                    
+                    <!-- Success/Error Messages -->
+                    <div id="form-message" class="form-message hidden"></div>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" data-en="First Name *" data-dari="نام *">نام *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" data-en="Last Name *" data-dari="نام خانوادگی *">نام خانوادگی *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone" data-en="Phone *" data-dari="تلفن *">تلفن *</label>
+                                <input type="tel" id="phone" name="phone" required dir="ltr" placeholder="+93 xxx xxx xxx">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-en="Email (Optional)" data-dari="ایمیل (اختیاری)">ایمیل (اختیاری)</label>
+                                <input type="email" id="email" name="email" dir="ltr">
+                            </div>
+                        </div>
+
+                        <!-- New Date and Time Fields -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredDate" data-en="Preferred Date *" data-dari="تاریخ مطلوب *">تاریخ مطلوب *</label>
+                                <div class="date-input-wrapper">
+                                    <input type="text" id="preferredDate" name="preferredDate" readonly required 
+                                           data-en="Select preferred date" data-dari="تاریخ مطلوب را انتخاب کنید"
+                                           placeholder="تاریخ مطلوب را انتخاب کنید">
+                                    <i class="fas fa-calendar-alt date-input-icon"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredTime" data-en="Preferred Time *" data-dari="زمان مطلوب *">زمان مطلوب *</label>
+                                <select id="preferredTime" name="preferredTime" required>
+                                    <option value="" data-en="Select preferred time" data-dari="زمان مطلوب را انتخاب کنید">زمان مطلوب را انتخاب کنید</option>
+                                    
+                                    <!-- 12:00 AM - 11:30 AM -->
+                                    <option value="00:00" data-en="12:00 AM" data-dari="۱۲:۰۰ شب">۱۲:۰۰ شب</option>
+                                    <option value="00:30" data-en="12:30 AM" data-dari="۱۲:۳۰ شب">۱۲:۳۰ شب</option>
+                                    <option value="01:00" data-en="1:00 AM" data-dari="۱:۰۰ شب">۱:۰۰ شب</option>
+                                    <option value="01:30" data-en="1:30 AM" data-dari="۱:۳۰ شب">۱:۳۰ شب</option>
+                                    <option value="02:00" data-en="2:00 AM" data-dari="۲:۰۰ شب">۲:۰۰ شب</option>
+                                    <option value="02:30" data-en="2:30 AM" data-dari="۲:۳۰ شب">۲:۳۰ شب</option>
+                                    <option value="03:00" data-en="3:00 AM" data-dari="۳:۰۰ شب">۳:۰۰ شب</option>
+                                    <option value="03:30" data-en="3:30 AM" data-dari="۳:۳۰ شب">۳:۳۰ شب</option>
+                                    <option value="04:00" data-en="4:00 AM" data-dari="۴:۰۰ شب">۴:۰۰ شب</option>
+                                    <option value="04:30" data-en="4:30 AM" data-dari="۴:۳۰ شب">۴:۳۰ شب</option>
+                                    <option value="05:00" data-en="5:00 AM" data-dari="۵:۰۰ شب">۵:۰۰ شب</option>
+                                    <option value="05:30" data-en="5:30 AM" data-dari="۵:۳۰ شب">۵:۳۰ شب</option>
+                                    <option value="06:00" data-en="6:00 AM" data-dari="۶:۰۰ صبح">۶:۰۰ صبح</option>
+                                    <option value="06:30" data-en="6:30 AM" data-dari="۶:۳۰ صبح">۶:۳۰ صبح</option>
+                                    <option value="07:00" data-en="7:00 AM" data-dari="۷:۰۰ صبح">۷:۰۰ صبح</option>
+                                    <option value="07:30" data-en="7:30 AM" data-dari="۷:۳۰ صبح">۷:۳۰ صبح</option>
+                                    <option value="08:00" data-en="8:00 AM" data-dari="۸:۰۰ صبح">۸:۰۰ صبح</option>
+                                    <option value="08:30" data-en="8:30 AM" data-dari="۸:۳۰ صبح">۸:۳۰ صبح</option>
+                                    <option value="09:00" data-en="9:00 AM" data-dari="۹:۰۰ صبح">۹:۰۰ صبح</option>
+                                    <option value="09:30" data-en="9:30 AM" data-dari="۹:۳۰ صبح">۹:۳۰ صبح</option>
+                                    <option value="10:00" data-en="10:00 AM" data-dari="۱۰:۰۰ صبح">۱۰:۰۰ صبح</option>
+                                    <option value="10:30" data-en="10:30 AM" data-dari="۱۰:۳۰ صبح">۱۰:۳۰ صبح</option>
+                                    <option value="11:00" data-en="11:00 AM" data-dari="۱۱:۰۰ صبح">۱۱:۰۰ صبح</option>
+                                    <option value="11:30" data-en="11:30 AM" data-dari="۱۱:۳۰ صبح">۱۱:۳۰ صبح</option>
+                                    
+                                    <!-- 12:00 PM - 11:30 PM -->
+                                    <option value="12:00" data-en="12:00 PM" data-dari="۱۲:۰۰ ظهر">۱۲:۰۰ ظهر</option>
+                                    <option value="12:30" data-en="12:30 PM" data-dari="۱۲:۳۰ ظهر">۱۲:۳۰ ظهر</option>
+                                    <option value="13:00" data-en="1:00 PM" data-dari="۱:۰۰ عصر">۱:۰۰ عصر</option>
+                                    <option value="13:30" data-en="1:30 PM" data-dari="۱:۳۰ عصر">۱:۳۰ عصر</option>
+                                    <option value="14:00" data-en="2:00 PM" data-dari="۲:۰۰ عصر">۲:۰۰ عصر</option>
+                                    <option value="14:30" data-en="2:30 PM" data-dari="۲:۳۰ عصر">۲:۳۰ عصر</option>
+                                    <option value="15:00" data-en="3:00 PM" data-dari="۳:۰۰ عصر">۳:۰۰ عصر</option>
+                                    <option value="15:30" data-en="3:30 PM" data-dari="۳:۳۰ عصر">۳:۳۰ عصر</option>
+                                    <option value="16:00" data-en="4:00 PM" data-dari="۴:۰۰ عصر">۴:۰۰ عصر</option>
+                                    <option value="16:30" data-en="4:30 PM" data-dari="۴:۳۰ عصر">۴:۳۰ عصر</option>
+                                    <option value="17:00" data-en="5:00 PM" data-dari="۵:۰۰ عصر">۵:۰۰ عصر</option>
+                                    <option value="17:30" data-en="5:30 PM" data-dari="۵:۳۰ عصر">۵:۳۰ عصر</option>
+                                    <option value="18:00" data-en="6:00 PM" data-dari="۶:۰۰ عصر">۶:۰۰ عصر</option>
+                                    <option value="18:30" data-en="6:30 PM" data-dari="۶:۳۰ عصر">۶:۳۰ عصر</option>
+                                    <option value="19:00" data-en="7:00 PM" data-dari="۷:۰۰ عصر">۷:۰۰ عصر</option>
+                                    <option value="19:30" data-en="7:30 PM" data-dari="۷:۳۰ عصر">۷:۳۰ عصر</option>
+                                    <option value="20:00" data-en="8:00 PM" data-dari="۸:۰۰ عصر">۸:۰۰ عصر</option>
+                                    <option value="20:30" data-en="8:30 PM" data-dari="۸:۳۰ عصر">۸:۳۰ عصر</option>
+                                    <option value="21:00" data-en="9:00 PM" data-dari="۹:۰۰ عصر">۹:۰۰ عصر</option>
+                                    <option value="21:30" data-en="9:30 PM" data-dari="۹:۳۰ عصر">۹:۳۰ عصر</option>
+                                    <option value="22:00" data-en="10:00 PM" data-dari="۱۰:۰۰ عصر">۱۰:۰۰ عصر</option>
+                                    <option value="22:30" data-en="10:30 PM" data-dari="۱۰:۳۰ عصر">۱۰:۳۰ عصر</option>
+                                    <option value="23:00" data-en="11:00 PM" data-dari="۱۱:۰۰ عصر">۱۱:۰۰ عصر</option>
+                                    <option value="23:30" data-en="11:30 PM" data-dari="۱۱:۳۰ عصر">۱۱:۳۰ عصر</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" data-en="Subject *" data-dari="موضوع *">موضوع *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" data-en="Select photography service" data-dari="خدمات عکاسی را انتخاب کنید">خدمات عکاسی را انتخاب کنید</option>
+                                <option value="wedding" data-en="Wedding Photography" data-dari="عکاسی عروسی">عکاسی عروسی</option>
+                                <option value="birthday" data-en="Birthday Photography" data-dari="عکاسی تولد">عکاسی تولد</option>
+                                <option value="portrait" data-en="Portrait Photography" data-dari="عکاسی پرتره">عکاسی پرتره</option>
+                                <option value="family" data-en="Family Photography" data-dari="عکاسی خانوادگی">عکاسی خانوادگی</option>
+                                <option value="event" data-en="Event Photography" data-dari="عکاسی رویداد">عکاسی رویداد</option>
+                                <option value="graduation" data-en="Graduation Photography" data-dari="عکاسی فارغ‌التحصیلی">عکاسی فارغ‌التحصیلی</option>
+                                <option value="editing" data-en="Photo Editing" data-dari="ویرایش عکس">ویرایش عکس</option>
+                                <option value="other" data-en="Other" data-dari="سایر">سایر</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-en="Message *" data-dari="پیام *">پیام *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" data-en="Send Booking Request" data-dari="ارسال درخواست رزرو">
+                            <span class="btn-text" data-en="Send Booking Request" data-dari="ارسال درخواست رزرو">ارسال درخواست رزرو</span>
+                            <span class="btn-loader hidden"><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info fade-in">
+                    <h2 data-en="Contact Information" data-dari="معلومات تماس">معلومات تماس</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-en="Studio Address" data-dari="آدرس استدیو">آدرس استدیو</h4>
+                            <p data-en="Shar-e-Naw, Kabul, Afghanistan" data-dari="شهرنو، کابل، افغانستان">شهرنو، کابل، افغانستان</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-en="Phone Numbers" data-dari="شماره‌های تماس">شماره‌های تماس</h4>
+                            <p class="phone-number" dir="ltr">+93 748 030 403</p>
+                            <p class="phone-number" dir="ltr">+93 764 346 272</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-en="Email" data-dari="ایمیل">ایمیل</h4>
+                            <p dir="ltr">info@kayhanstudio.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-en="Business Hours" data-dari="ساعات کاری">ساعات کاری</h4>
+                            <p data-en="Saturday - Thursday: 8:00 AM - 6:00 PM" data-dari="شنبه - پنج‌شنبه: ۸:۰۰ صبح - ۶:۰۰ عصر">شنبه - پنج‌شنبه: ۸:۰۰ صبح - ۶:۰۰ عصر</p>
+                            <p data-en="Friday: Closed" data-dari="جمعه: تعطیل">جمعه: تعطیل</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4 data-en="Follow Us" data-dari="ما را دنبال کنید">ما را دنبال کنید</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section">
+        <div class="container">
+            <h2 class="section-title" data-en="Find Us" data-dari="ما را پیدا کنید">ما را پیدا کنید</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p data-en="Interactive Map Here" data-dari="نقشه تعاملی اینجا">نقشه تعاملی اینجا</p>
+                    <small data-en="Google Maps integration would go here" data-dari="ادغام گوگل مپ اینجا قرار می‌گیرد">ادغام گوگل مپ اینجا قرار می‌گیرد</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title" data-en="Frequently Asked Questions" data-dari="سؤالات متداول">سؤالات متداول</h2>
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3 data-en="How long does a photography session take?" data-dari="یک جلسه عکاسی چقدر طول می‌کشد؟">یک جلسه عکاسی چقدر طول می‌کشد؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Photography session duration varies by service type. Wedding photography can take 6-10 hours, while portrait sessions typically last 1-2 hours." data-dari="مدت جلسه عکاسی بسته به نوع خدمت متفاوت است. عکاسی عروسی می‌تواند ۶ تا ۱۰ ساعت طول بکشد، در حالی که جلسات پرتره معمولاً ۱ تا ۲ ساعت طول می‌کشد.">مدت جلسه عکاسی بسته به نوع خدمت متفاوت است. عکاسی عروسی می‌تواند ۶ تا ۱۰ ساعت طول بکشد، در حالی که جلسات پرتره معمولاً ۱ تا ۲ ساعت طول می‌کشد.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3 data-en="What are your photography packages and pricing?" data-dari="بسته‌ها و قیمت‌های عکاسی شما چیست؟">بسته‌ها و قیمت‌های عکاسی شما چیست؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="We offer various photography packages for different needs. Contact us for detailed pricing information and custom packages tailored to your requirements." data-dari="ما بسته‌های مختلف عکاسی برای نیازهای متفاوت ارائه می‌دهیم. برای اطلاعات دقیق قیمت و بسته‌های سفارشی متناسب با نیازهایتان با ما تماس بگیرید.">ما بسته‌های مختلف عکاسی برای نیازهای متفاوت ارائه می‌دهیم. برای اطلاعات دقیق قیمت و بسته‌های سفارشی متناسب با نیازهایتان با ما تماس بگیرید.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3 data-en="When will I receive my photos?" data-dari="کی عکس‌هایم را دریافت خواهم کرد؟">کی عکس‌هایم را دریافت خواهم کرد؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="We typically deliver edited photos within 1-2 weeks for portrait sessions and 2-4 weeks for weddings. All photos are provided in high-resolution digital format." data-dari="ما معمولاً عکس‌های ویرایش شده را ظرف ۱ تا ۲ هفته برای جلسات پرتره و ۲ تا ۴ هفته برای عروسی‌ها تحویل می‌دهیم. تمام عکس‌ها در فرمت دیجیتال با وضوح بالا ارائه می‌شوند.">ما معمولاً عکس‌های ویرایش شده را ظرف ۱ تا ۲ هفته برای جلسات پرتره و ۲ تا ۴ هفته برای عروسی‌ها تحویل می‌دهیم. تمام عکس‌ها در فرمت دیجیتال با وضوح بالا ارائه می‌شوند.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/93748030403" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-en="Quick Links" data-dari="لینک‌های سریع">لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-dari="خانه">خانه</a></li>
+                        <li><a href="about.html" data-en="About" data-dari="درباره ما">درباره ما</a></li>
+                        <li><a href="services.html" data-en="Services" data-dari="خدمات">خدمات</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-dari="تماس">تماس</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Services" data-dari="خدمات">خدمات</h3>
+                    <ul>
+                        <li><a href="services.html" data-en="Wedding Photography" data-dari="عکاسی عروسی">عکاسی عروسی</a></li>
+                        <li><a href="services.html" data-en="Portrait Photography" data-dari="عکاسی پرتره">عکاسی پرتره</a></li>
+                        <li><a href="services.html" data-en="Family Photography" data-dari="عکاسی خانوادگی">عکاسی خانوادگی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Contact Info" data-dari="معلومات تماس">معلومات تماس</h3>
+                    <p><i class="fas fa-phone"></i> <span class="phone-number" dir="ltr">+93 748 030 403</span></p>
+                    <p><i class="fas fa-envelope"></i> <span dir="ltr">info@kayhanstudio.com</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Kabul, Afghanistan" data-dari="کابل، افغانستان">کابل، افغانستان</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="&copy; 2025 Kayhan Studio. All rights reserved." data-dari="&copy; ۲۰۲۵ استدیو کیهان. تمام حقوق محفوظ است.">&copy; ۲۰۲۵ استدیو کیهان. تمام حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="calendar.js"></script>
+    <script src="contact-form.js"></script>
+</body>
+</html>
